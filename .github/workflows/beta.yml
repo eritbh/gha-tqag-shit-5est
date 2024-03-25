@@ -1,0 +1,15 @@
+name: "Publish beta release"
+on:
+  push:
+    tags:
+    - "v*"
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - env:
+        BUILD_TYPE: beta
+        BUILD_SHA: ${{ github.sha }}
+      run: env
