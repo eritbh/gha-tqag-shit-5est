@@ -13,5 +13,5 @@ jobs:
         BUILD_TYPE: beta
         BUILD_SHA: ${{ github.sha }}
       run: env
-    - run: "jq '.browser_specific_settings.gecko.id = \"toolbox-beta@toolbox-team.github.com\"' extension/firefox_manifest.json"
+    - run: "jq '.browser_specific_settings.gecko.id = \"toolbox-beta@toolbox-team.github.com\"' extension/firefox_manifest.json > extension/firefox_manifest.json"
     - run: "cat extension/firefox_manifest.json"
