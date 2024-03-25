@@ -1,0 +1,16 @@
+name: "Publish stable release"
+on:
+  push:
+    tags:
+    - "v*"
+    - "!v*-*"
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - env:
+        BUILD_TYPE: stable
+        BUILD_SHA: ${{ github.sha }}
+      run: env
